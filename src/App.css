@@ -1,12 +1,6 @@
-/* src/App.css */
 
-/*
-  Base styles for a dark theme.
-  We're using a font import from Google Fonts for a modern look.
-*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap');
 
-/* --- CSS Variables for Theming --- */
 :root {
   --background-color: #121212;
   --card-background: #1f1f1f;
@@ -24,7 +18,6 @@
   --error-color: #f87171;
 }
 
-/* Light theme variables */
 .light {
   --background-color: #f5f5f5;
   --card-background: #ffffff;
@@ -49,7 +42,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Main container and card */
 .app-container {
   display: flex;
   flex-direction: column;
@@ -72,7 +64,6 @@ body {
   position: relative;
 }
 
-/* Typography and headings */
 .app-title {
   font-size: 2rem;
   font-weight: bold;
@@ -90,7 +81,6 @@ body {
   color: var(--error-color);
 }
 
-/* Input and selector container */
 .input-container {
   display: flex;
   flex-direction: column;
@@ -155,7 +145,6 @@ label {
   height: 1.5rem;
 }
 
-/* Conversion result display */
 .result-container {
   text-align: center;
   padding: 1rem;
@@ -176,7 +165,6 @@ label {
   color: var(--result-color);
 }
 
-/* Exchange Rate Display */
 .exchange-rate-container {
   text-align: center;
   margin-top: 1rem;
@@ -187,7 +175,6 @@ label {
   color: var(--label-color);
 }
 
-/* Theme Toggle Button */
 .theme-toggle-button {
   position: absolute;
   top: 1rem;
@@ -211,7 +198,6 @@ label {
 }
 
 
-/* Responsive adjustments */
 @media (min-width: 768px) {
   .input-container {
     flex-direction: row;

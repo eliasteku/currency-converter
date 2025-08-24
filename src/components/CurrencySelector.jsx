@@ -5,7 +5,6 @@ const CurrencySelector = ({ currencies, selectedCurrency, onCurrencyChange }) =>
     <select 
       value={selectedCurrency} 
       onChange={(e) => onCurrencyChange(e.target.value)}
-      // Optional: Add Tailwind CSS classes for basic styling
       className="p-2 border rounded-md"
     >
       {currencies.map((currencyCode) => (

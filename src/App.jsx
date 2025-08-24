@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import './App.css'; // Import the CSS file
+import './App.css'; 
 
-// CurrencySelector component
 const CurrencySelector = ({ currencies, selectedCurrency, onCurrencyChange }) => {
   return (
     <select 
@@ -18,7 +17,6 @@ const CurrencySelector = ({ currencies, selectedCurrency, onCurrencyChange }) =>
   );
 };
 
-// AmountInput component
 const AmountInput = ({ amount, onAmountChange }) => {
   return (
     <input 
@@ -31,46 +29,27 @@ const AmountInput = ({ amount, onAmountChange }) => {
   );
 };
 
-/**
- * Main application component for the Currency Converter.
- * This component handles state, API fetching, and rendering of all UI components.
- */
 function App() {
-  // State for fetching data from the API
   const [currencyData, setCurrencyData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // State for user input and currency selections
   const [fromCurrency, setFromCurrency] = useState('USD');
   const [toCurrency, setToCurrency] = useState('EUR');
   const [amount, setAmount] = useState('');
   
-  // New state for handling the theme
   const [theme, setTheme] = useState('dark');
 
-  /**
-   * Function to handle swapping the "from" and "to" currencies.
-   * This updates the state, which triggers a re-render and recalculates the conversion.
-   */
   const handleSwapCurrencies = () => {
     setFromCurrency(toCurrency);
     setToCurrency(fromCurrency);
   };
   
-  /**
-   * Function to toggle the theme between 'light' and 'dark'.
-   */
   const handleThemeToggle = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
-  /**
-   * useEffect hook to fetch exchange rate data when the component mounts.
-   * This runs only once due to the empty dependency array [].
-   */
   useEffect(() => {
-    // Note: In a real-world app, API keys should be handled more securely.
     const API_KEY = 'bb19030d2f14fa0de3662e89'; 
     const BASE_CURRENCY = 'USD'; 
 
@@ -101,10 +80,8 @@ function App() {
     fetchData();
   }, []);
 
-  // Get an array of currency codes from the fetched data for the selectors
   const currencies = currencyData ? Object.keys(currencyData.conversion_rates) : [];
   
-  // Calculate the converted amount based on the current state
   let convertedAmount = '';
   if (currencyData && amount) {
     const rateTo = currencyData.conversion_rates[toCurrency];
@@ -112,7 +89,6 @@ function App() {
     convertedAmount = (parseFloat(amount) * (rateTo / rateFrom)).toFixed(2);
   }
 
-  // Calculate the exchange rate
   let exchangeRate = '';
   if (currencyData) {
     const rateTo = currencyData.conversion_rates[toCurrency];

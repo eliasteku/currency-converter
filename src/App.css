@@ -1,0 +1,221 @@
+/* src/App.css */
+
+/*
+  Base styles for a dark theme.
+  We're using a font import from Google Fonts for a modern look.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap');
+
+/* --- CSS Variables for Theming --- */
+:root {
+  --background-color: #121212;
+  --card-background: #1f1f1f;
+  --text-color: #e0e0e0;
+  --title-color: #f5f5f5;
+  --label-color: #a0a0a0;
+  --input-background: #2b2b2b;
+  --input-border: #333;
+  --result-background: #2b2b2b;
+  --result-color: #55a0ff;
+  --swap-button-background: #333;
+  --swap-button-hover: #444;
+  --toggle-button-background: #2b2b2b;
+  --toggle-button-color: #e0e0e0;
+  --error-color: #f87171;
+}
+
+/* Light theme variables */
+.light {
+  --background-color: #f5f5f5;
+  --card-background: #ffffff;
+  --text-color: #333;
+  --title-color: #1f1f1f;
+  --label-color: #666;
+  --input-background: #ffffff;
+  --input-border: #ccc;
+  --result-background: #f0f0f0;
+  --result-color: #1a73e8;
+  --swap-button-background: #e0e0e0;
+  --swap-button-hover: #d0d0d0;
+  --toggle-button-background: #e0e0e0;
+  --toggle-button-color: #1f1f1f;
+  --error-color: #d9534f;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Main container and card */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.card {
+  background-color: var(--card-background);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 32rem;
+  position: relative;
+}
+
+/* Typography and headings */
+.app-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--title-color);
+}
+
+.loading-text, .error-text {
+  text-align: center;
+  color: var(--label-color);
+}
+
+.error-text {
+  color: var(--error-color);
+}
+
+/* Input and selector container */
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--label-color);
+}
+
+.input-field,
+.selector-field {
+  padding: 0.75rem;
+  border: 1px solid var(--input-border);
+  background-color: var(--input-background);
+  color: var(--text-color);
+  border-radius: 0.25rem;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 1rem;
+}
+
+.input-field:focus,
+.selector-field:focus {
+  outline: none;
+  border-color: var(--label-color);
+  box-shadow: 0 0 0 1px var(--label-color);
+}
+
+.swap-button {
+  background-color: var(--swap-button-background);
+  color: var(--text-color);
+  padding: 0.5rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.swap-button:hover {
+  background-color: var(--swap-button-hover);
+}
+
+.swap-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Conversion result display */
+.result-container {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--result-background);
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.result-text-label {
+  font-size: 1rem;
+  color: var(--label-color);
+  margin-bottom: 0.5rem;
+}
+
+.result-amount {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--result-color);
+}
+
+/* Exchange Rate Display */
+.exchange-rate-container {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.exchange-rate-text {
+  font-size: 0.9rem;
+  color: var(--label-color);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--toggle-button-background);
+  color: var(--toggle-button-color);
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.theme-toggle-button:hover {
+  background-color: var(--swap-button-hover);
+}
+
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .input-container {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 1.5rem;
+  }
+}

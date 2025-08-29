@@ -6,7 +6,7 @@ A super simple web app for checking live currency conversions. It's fast, works 
 
 ### **Try it out**
 
-**currency-converter-one-gamma.vercel.app**
+**[currency-converter-one-gamma.vercel.app](https://currency-converter-one-gamma.vercel.app/)**
 
 ### **Key Features**
 

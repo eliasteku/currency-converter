@@ -1,12 +1,19 @@
-# React + Vite
+Currency Converter
+What is this?
+A super simple web app for checking live currency conversions. It's fast, works on your phone, and even has a dark mode.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Try it out
+currency-converter-one-gamma.vercel.app
+Key Features
+Live Rates: Gets real-time currency rates from an API.
 
-Currently, two official plugins are available:
+Looks Good: It's fully responsive, so it works on any device.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Dark Mode: Built-in toggle for a more comfortable view.
 
-## Expanding the ESLint configuration
+Tech Stack
+React
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Vite
+
+CSS
